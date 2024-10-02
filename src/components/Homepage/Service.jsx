@@ -1,7 +1,10 @@
 import React from "react";
-
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { HiLocationMarker } from "react-icons/hi";
+import { TbPhoneCalling } from "react-icons/tb";
 import { services } from "../../lib/Service";
 import ServiceCard from "../cards/ServiceCard";
+import Link from "next/link";
 
 const Service = () => {
     console.log(services);
@@ -22,6 +25,31 @@ const Service = () => {
                 <ServiceCard service={service} key={service._id}/>
             ))
         }
+      </div>
+      <Link href={"/services"}><button className="btn btn-outline border-primary text-primary hover:bg-primary hover:text-white rounded-md md:px-6 px-3 md:py-2 md:text-lg mt-12">More Services</button></Link>
+      <div className="flex lg:flex-row flex-col gap-10 bg-black h-[250px] lg:mt-32 justify-around items-center rounded-lg">
+        <div className=" text-white flex items-center gap-4">
+            <div><FaRegCalendarAlt className="text-4xl text-primary"/></div>
+            <div>
+                <p>We are open monday-friday</p>
+                <p className="text-2xl font-bold">7:00 am - 9:00 pm</p>
+            </div>
+        </div>
+        <div className="text-white flex items-center gap-4">
+            <div><TbPhoneCalling className="text-4xl text-primary"/></div>
+            <div>
+                <p>Have a question?</p>
+                <p className="text-2xl font-bold">+2546 251 2658</p>
+            </div>
+        </div>
+        <div className=" text-white flex items-center gap-4">
+            <div><HiLocationMarker className="text-4xl text-primary"/></div>
+            <div>
+                <p>Need a repair? our address</p>
+                <p className="text-2xl font-bold">Liza Street, New York</p>
+            </div>
+        </div>
+        
       </div>
     </div>
   );
